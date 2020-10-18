@@ -23,7 +23,7 @@ function App() {
 
         <div className="p-3">
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/react-practice-app/">
               <Home />
             </Route>
             <Route path="/about">

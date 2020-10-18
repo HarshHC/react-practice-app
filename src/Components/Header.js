@@ -7,7 +7,7 @@ import {
 function Header() {
     return(
         <header className="border-b p-3 flex justify-between items-center">
-            <Link to="/">
+            <Link to="/react-practice-app/">
             <span className="font-bold">
                 AppName
             </span>
