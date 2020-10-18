@@ -1,0 +1,42 @@
+import React,{useState, useEffect} from 'react';
+import Loader from '../Components/Loader';
+import ProductCard from '../Components/ProductCard';
+import { useAxiosGet } from '../Hooks/HttpRequest';
+
+function Home() {
+
+    let content = null;
+
+    const url = `https://5e9623dc5b19f10016b5e31f.mockapi.io/api/v1/products?page=1&limit=10`
+    
+    let products = useAxiosGet(url)
+    
+    if(products.error){
+        content = <div>There was an error please try again</div>
+    }
+
+    if(products.loading){
+        content = <Loader/>
+    }
+
+    if(products.data){
+        content = 
+        products.data.map((product) =>
+            <div key={product.id}>
+                <ProductCard 
+                    product = {product} />
+            </div>
+        ) 
+    }
+
+    return (
+        <div>
+            <h1 className="text-2xl mb-3 font-bold">Best Sellers</h1>
+            
+            {content}
+        </div>
+    );
+    
+}
+
+export default Home;

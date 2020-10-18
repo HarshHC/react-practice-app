@@ -1,24 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './tailwind.css'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom'
+import HelloWorld from './Components/HelloWorld'
+import Header from './Components/Header';
+import Footer from './Components/footer';
+import Home from './views/Home';
+import About from './views/About';
+import Product from './views/Product';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="relative pb-10 min-h-screen">
+      <Router>
+
+        <Header />
+
+        <div className="p-3">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route exact path="/products/:id">
+              <Product/>
+            </Route>
+          </Switch>
+        </div>
+
+        <Footer />
+
+      </Router>
+    
     </div>
   );
 }
