@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import './tailwind.css'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link

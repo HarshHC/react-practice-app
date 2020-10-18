@@ -20,7 +20,7 @@
     "react-spring": "^8.0.27",
     "tailwindcss": "^1.8.13"
   },
-  "homepage": "https://harshhc.github.io/react-practice-app",
+  "homepage": "https://harshhc.github.io/react-practice-app/",
   "scripts": {
     "predeploy":"npm run build",
     "deploy": "gh-pages -d build",
